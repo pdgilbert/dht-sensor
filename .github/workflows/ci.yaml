@@ -80,7 +80,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: build
-          args: --release --target thumbv7em-none-eabihf --features stm32f411 --example dht-multi-hals
+          args: --release --target thumbv7em-none-eabihf --features stm32f4xx,stm32f411 --example dht-multi-hals
           use-cross: true
       - name: Test
         uses: actions-rs/cargo@v1
