@@ -56,7 +56,7 @@ jobs:
       matrix:
         #mcu: [stm32f042, stm32f030xc, stm32f103, stm32f100, stm32f101, stm32f303xc,
         #      stm32f401, stm32f411, stm32h742, stm32l0x2, stm32l100, stm32l151]
-        #mcu: [stm32f103, stm32f303xc, stm32f411]
+        mcu: [stm32f042, stm32f103, stm32f411]
         dht: [dht11, dht22]
         include:
            - mcu: stm32f042
@@ -102,14 +102,20 @@ jobs:
           profile: minimal
           toolchain: stable
           #target: thumbv6m-none-eabi
-      #- name: experiment
-      #  env:
-      #    SITE: ${{ matrix.mcu }}
-      #  run: echo $SITE ${{ matrix.hal }}  ${{ matrix.dht }}
+      - name: experiment1
+        env:
+          MCU: ${{ matrix.mcu }}
+          HAL: ${{ matrix.hal }}
+        run: echo ${{ matrix.trg }} , $MCU , $HAL , ${{ matrix.dht }}
+      - name: experiment2
+        env:
+          MCU: ${{ matrix.mcu }}
+          HAL: ${{ matrix.hal }}
+        run: echo ${{ matrix.trg }} , ${{ matrix.mcu }} , ${{ matrix.hal }} , ${{ matrix.dht }}
       - name: Build
         uses: actions-rs/cargo@v1
         with:
-          command: build
+          command: buildxxx
           args: --release --features ${{ matrix.mcu }},${{ matrix.dht }}
       - name: Build example stm32f042
         uses: actions-rs/cargo@v1
