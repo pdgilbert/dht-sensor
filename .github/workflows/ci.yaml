@@ -108,9 +108,6 @@ jobs:
           HAL: ${{ matrix.hal }}
         run: echo ${{ matrix.trg }} , $MCU , $HAL , ${{ matrix.dht }}
       - name: experiment2
-        env:
-          MCU: ${{ matrix.mcu }}
-          HAL: ${{ matrix.hal }}
         run: echo ${{ matrix.trg }} , ${{ matrix.mcu }} , ${{ matrix.hal }} , ${{ matrix.dht }}
       - name: Build
         uses: actions-rs/cargo@v1
