@@ -65,12 +65,12 @@ jobs:
          #  - mcu: stm32f030xc           # this does not fit in flash 
          #    hal: "stm32f0xx"           # even with -- release
          #    trg: "thumbv6m-none-eabi"  #
-         #  - mcu: stm32f100
-         #    hal: "stm32f1xx"
-         #    trg: "thumbv7m-none-eabi"
-         #  - mcu: stm32f101
-         #    hal: "stm32f1xx"
-         #    trg: "thumbv7m-none-eabi"
+           - mcu: stm32f100
+             hal: "stm32f1xx"
+             trg: "thumbv7m-none-eabi"
+           - mcu: stm32f101
+             hal: "stm32f1xx"
+             trg: "thumbv7m-none-eabi"
            - mcu: stm32f103
              hal: "stm32f1xx"
              trg: "thumbv7m-none-eabi"
@@ -102,13 +102,13 @@ jobs:
           profile: minimal
           toolchain: stable
           #target: thumbv6m-none-eabi
-      - name: experiment1
-        env:
-          MCU: ${{ matrix.mcu }}
-          HAL: ${{ matrix.hal }}
-        run: echo ${{ matrix.trg }} , $MCU , $HAL , ${{ matrix.dht }}
-      - name: experiment2
-        run: echo ${{ matrix.trg }} , ${{ matrix.mcu }} , ${{ matrix.hal }} , ${{ matrix.dht }}
+      #- name: experiment1
+      #  env:
+      #    MCU: ${{ matrix.mcu }}
+      #    HAL: ${{ matrix.hal }}
+      #  run: echo ${{ matrix.trg }} , $MCU , $HAL , ${{ matrix.dht }}
+      #- name: experiment2
+      #  run: echo ${{ matrix.trg }} , ${{ matrix.mcu }} , ${{ matrix.hal }} , ${{ matrix.dht }}
       - name: Build
         uses: actions-rs/cargo@v1
         with:
