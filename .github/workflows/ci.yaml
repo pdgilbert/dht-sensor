@@ -55,7 +55,7 @@ jobs:
     strategy:
       matrix:
         dht: [dht11, dht22]
-        # dht x mcu (2x10) form matrix and include adds hal and trg to go along with an mcu
+        # dht x mcu (2x9) form matrix and include adds hal and trg to go along with an mcu
         # Note that there should be one and only one include group for each mcu.
         # If there are additional groups then they are run too, but without dht.
         mcu: [stm32f042, stm32f103, stm32f100, stm32f101, stm32f303xc,
@@ -65,9 +65,9 @@ jobs:
            - mcu:  stm32f042
              hal: "stm32f0xx"
              trg: "thumbv6m-none-eabi"
-         #  - mcu:  stm32f030xc          # this does not fit in flash 
-         #    hal: "stm32f0xx"           # even with -- release
-         #    trg: "thumbv6m-none-eabi"  #
+         #  - mcu:  stm32f030xc            this does not fit in flash 
+         #    hal: "stm32f0xx"             even with -- release
+         #    trg: "thumbv6m-none-eabi"   
            - mcu:  stm32f100
              hal: "stm32f1xx"
              trg: "thumbv7m-none-eabi"
@@ -89,9 +89,9 @@ jobs:
            #- mcu:  stm32h742             
            #  hal: "stm32f7xx"              hal does not build
            #  trg: "thumbv7em-none-eabihf"
-           - mcu:  stm32l0x2
-             hal: "stm32l0xx"
-             trg: "thumbv6m-none-eabi"
+           #- mcu:  stm32l0x2               this does not fit in flash 
+           #  hal: "stm32l0xx"              even with -- release
+           #  trg: "thumbv6m-none-eabi"
            - mcu:  stm32l100
              hal: "stm32l1xx"
              trg: "thumbv7m-none-eabi"
