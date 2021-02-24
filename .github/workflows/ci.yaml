@@ -59,7 +59,7 @@ jobs:
         # Note that there should be one and only one include group for each mcu.
         # If there are additional groups then they are run too, but without dht.
         mcu: [stm32f042, stm32f103, stm32f100, stm32f101, stm32f303xc,
-              stm32f401, stm32f411, stm32h742, stm32l0x2, stm32l100, stm32l151]
+              stm32f401, stm32f411, stm32h742, stm32l0xx, stm32l100, stm32l151]
         #mcu: [stm32f042, stm32f103, stm32f411]
         include:
            - mcu: stm32f042
