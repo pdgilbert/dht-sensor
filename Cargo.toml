@@ -16,6 +16,15 @@ exclude = [
   "memory.x",
   ".gitignore",
 ]
+#link = "builds.rs"
+
+[[example]]
+name = "stm32f042"
+path = "examples/stm32f042.rs"
+
+[[example]]
+name = "dht-multi-hals"
+path = "examples/dht-multi-hals.rs"
 
 #link = "builds.rs"
 
@@ -40,6 +49,8 @@ stm32h7xx-hal = {version = "^0.8.0", optional = true}
 stm32l0xx-hal = {version = "^0.6.2", optional = true} 
 stm32l1xx-hal = {version = "^0.1",   optional = true,  default-features = false} 
 stm32l4xx-hal = {version = "^0.6.0", optional = true}
+[dependencies.asm-delay]  # for stm32f3xx-hal exaple only. (hal delay is crashing?)
+version = "0.7.0"
 
 [dev-dependencies]
 cortex-m = "0.6.7"
