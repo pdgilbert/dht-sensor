@@ -26,16 +26,6 @@ path = "examples/stm32f042.rs"
 name = "dht-multi-hals"
 path = "examples/dht-multi-hals.rs"
 
-#link = "builds.rs"
-
-[[example]]
-name = "stm32f042"
-path = "examples/stm32f042.rs"
-
-[[example]]
-name = "dht-multi-hals"
-path = "examples/dht-multi-hals.rs"
-
 [dependencies]
 embedded-hal = "^0.2.4"
 # Next could be dev-dependencies since they are only for examples, but 
